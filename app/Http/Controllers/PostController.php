@@ -12,11 +12,16 @@ use App\Models\Comment;
 class PostController extends Controller
 {
     // App\Http\Controllers\PostController.php
+    // PostController.php
+
     public function index()
     {
-        $posts = Post::withCount('comments')->get();
+        // Mengambil postingan dengan urutan terbaru di atas
+        $posts = Post::with('user', 'comments')->orderBy('created_at', 'desc')->get();
+
         return view('posts.index', compact('posts'));
     }
+
 
 
     public function create()
