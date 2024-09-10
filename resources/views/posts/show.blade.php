@@ -5,10 +5,10 @@
         <h1>{{ $post->title }}</h1>
         <p>{{ $post->body }}</p>
         <p class="text-muted">
-            Posted by <strong>{{ $post->user->name }}</strong> on
-            <span class="post-date">
-                {{ $post->created_at->setTimezone('Asia/Jakarta')->format('d M Y H:i') }}
-            </span>
+            Posted by <strong>{{ $post->user->name }}</strong>
+        </p>
+        <p class="text-muted post-date">
+            {{ $post->created_at->setTimezone('Asia/Jakarta')->format('d M Y H:i') }}
         </p>
 
         <hr>
@@ -46,6 +46,7 @@
         .post-date {
             color: #6c757d; /* Warna abu-abu untuk tanggal dan jam */
             font-style: italic; /* Menjadikan tanggal miring */
+            margin-top: 0.5rem; /* Jarak atas dari teks sebelumnya */
         }
 
         .comment {

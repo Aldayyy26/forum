@@ -10,11 +10,11 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ $post->title }}</h2>
                     <p class="card-text">{{ $post->body }}</p>
-                    <p class="text-muted">
-                        Posted by <strong>{{ $post->user->name }}</strong> on
-                        <span class="post-date">
-                            {{ $post->created_at->setTimezone('Asia/Jakarta')->format('l, d M Y H:i') }}
-                        </span>
+                    <p class="text-muted mb-1">
+                        Posted by <strong>{{ $post->user->name }}</strong>
+                    </p>
+                    <p class="text-muted post-date mb-2">
+                        {{ $post->created_at->setTimezone('Asia/Jakarta')->format('l, d M Y H:i') }}
                     </p>
                     <a href="{{ route('posts.show', $post) }}" class="btn btn-outline-secondary">
                         Comments: {{ $post->comments->count() }}
